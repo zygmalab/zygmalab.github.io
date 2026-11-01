@@ -474,7 +474,7 @@ footer .wrap{display:grid;gap:28px}
       <div class="rule"></div>
       <p>Dental CAD designer and ceramist with 22 years in prosthetics, in the field since 2004 with a family background in dental prosthetics. More than 50,000 CAD designs and 5,000+ full-arch hybrid restorations planned and executed with some of the most respected oral and maxillofacial surgeons in the United States.</p>
       <p>Exocad, Millbox and Deprag specialist. Full digital workflow from planning to delivery: All-on-X and zygomatic design, photogrammetry, same-day conversions, occlusion and morphology, ceramic layering and high-end finishing. ZYGMA is his private laboratory in Tampa, Florida, built for complex full-arch rehabilitation.</p>
-      <p>Follow the bench work on Instagram: <a href="https://www.instagram.com/luizferbrito" target="_blank" rel="noopener">@luizferbrito</a> and <a href="https://www.instagram.com/zygmalab" target="_blank" rel="noopener">@zygmalab</a>.</p>
+      <p>Follow the bench work on Instagram: <a href="https://www.instagram.com/luizferbrito" target="_blank" rel="noopener">@luizferbrito</a> and <a href="https://www.instagram.com/zygmadental" target="_blank" rel="noopener">@zygmadental</a>.</p>
     </div>
     <div class="creds">
       <div class="cred"><b>MDT</b><span>Master Dental Technician, ceramist, CAD designer</span></div>
@@ -553,9 +553,10 @@ footer .wrap{display:grid;gap:28px}
     <h2>Cases, process and the bench, every day.</h2>
     <div class="social">
       <a id="waLink" href="#" hidden><b>WhatsApp Business</b><span>Questions, scheduling and rush requests (under 7 days: +20%)</span></a>
-      <a href="https://www.instagram.com/zygmalab" target="_blank" rel="noopener"><b>Instagram</b><span>@zygmalab · full-arch cases, milling to ceramics</span></a>
-      <a href="https://www.facebook.com/zygmalab" target="_blank" rel="noopener"><b>Facebook</b><span>ZYGMA Advanced Dental Lab · for clinics and surgeons</span></a>
-      <a href="https://www.tiktok.com/@zygmalab" target="_blank" rel="noopener"><b>TikTok</b><span>@zygmalab · the process, in motion</span></a>
+      <a href="https://www.instagram.com/zygmadental" target="_blank" rel="noopener"><b>Instagram</b><span>@zygmadental · full-arch cases, milling to ceramics</span></a>
+      <a id="ytLink" href="#" hidden target="_blank" rel="noopener"><b>YouTube</b><span>Case walkthroughs, the process and ZYGMA courses</span></a>
+      <a id="fbLink" href="#" hidden target="_blank" rel="noopener"><b>Facebook</b><span>ZYGMA Advanced Dental Lab · for clinics and surgeons</span></a>
+      <a id="ttLink" href="#" hidden target="_blank" rel="noopener"><b>TikTok</b><span>The process, in motion</span></a>
     </div>
   </div>
 </section>
@@ -589,6 +590,9 @@ footer .wrap{display:grid;gap:28px}
   var LAB_CC="cdtluizbrito@gmail.com";
   var $=function(id){return document.getElementById(id)};
   var WHATSAPP="";   /* e.g. "18130000000" — when set, the WhatsApp Business card appears */
+  var YOUTUBE="";    /* e.g. "https://www.youtube.com/@zygmadental" — when set, the YouTube card appears */
+  var FACEBOOK="";   /* e.g. "https://www.facebook.com/zygmadental" */
+  var TIKTOK="";     /* e.g. "https://www.tiktok.com/@zygmadental" */
   /* Short course videos: {title, mp4:"videos/x.mp4"} or {title, youtube:"VIDEO_ID"}. Empty list = placeholders. */
   var VIDEOS=[];
   var REG=null; try{REG=JSON.parse(localStorage.getItem("zygma_doc")||"null");}catch(e){}
@@ -598,6 +602,7 @@ footer .wrap{display:grid;gap:28px}
       if(v.youtube) return '<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/'+v.youtube+'" title="'+(v.title||"")+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>';
       return '<div class="vid"><video src="'+v.mp4+'" controls playsinline preload="metadata"'+(v.poster?' poster="'+v.poster+'"':'')+'></video><div class="cap">'+(v.title||"")+'</div></div>'; }).join("");})();
   if(WHATSAPP){var w=$("waLink");w.hidden=false;w.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hello ZYGMA — ");w.target="_blank";w.rel="noopener";}
+  [["ytLink",YOUTUBE],["fbLink",FACEBOOK],["ttLink",TIKTOK]].forEach(function(p){if(p[1]){var e=$(p[0]);e.hidden=false;e.href=p[1];}});
   var F={planning:1000,outside:300,printed:300,guide:250,model:65,tryin:250,pmma:650,pmmaTi:1500,ti:900,zirc:3500,ibar:4000,denM:850,denP:650};
   var $=function(id){return document.getElementById(id)};
   var fmt=function(n){return "$"+n.toLocaleString("en-US")};
